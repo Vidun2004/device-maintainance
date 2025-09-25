@@ -10,7 +10,7 @@ export default function LogHistory() {
   const fetchLogs = async (emp, p = 1) => {
     if (!emp) return;
     const res = await axios.get(
-      `http://localhost:5000/history/${emp}?page=${p}&limit=5`
+      `https://d-m-server-production.up.railway.app/history/${emp}?page=${p}&limit=5`
     );
     setLogs(res.data.logs);
     setPage(res.data.page);

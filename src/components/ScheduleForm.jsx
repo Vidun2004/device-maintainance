@@ -11,7 +11,7 @@ export default function ScheduleForm({ onAdded }) {
     e.preventDefault();
     if (!employee || !device || !day || !time) return alert("Fill all fields!");
 
-    await axios.post("http://localhost:5000/schedule", {
+    await axios.post("https://d-m-server-production.up.railway.app/schedule", {
       employee,
       device,
       day,

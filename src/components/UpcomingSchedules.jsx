@@ -23,20 +23,20 @@ export default function UpcomingSchedules({ schedules, refreshSchedules }) {
     }
     const page = 1;
     const res = await axios.get(
-      `http://localhost:5000/history/${employee}?page=${page}&limit=5`
+      `https://d-m-server-production.up.railway.app/history/${employee}?page=${page}&limit=5`
     );
     setExpandedLogs((prev) => ({ ...prev, [employee]: { ...res.data } }));
   };
 
   const changePage = async (employee, newPage) => {
     const res = await axios.get(
-      `http://localhost:5000/history/${employee}?page=${newPage}&limit=5`
+      `https://d-m-server-production.up.railway.app/history/${employee}?page=${newPage}&limit=5`
     );
     setExpandedLogs((prev) => ({ ...prev, [employee]: { ...res.data } }));
   };
 
   const markCleaned = async (id) => {
-    await axios.post(`http://localhost:5000/schedule/${id}/cleaned`);
+    await axios.post(`https://d-m-server-production.up.railway.app/schedule/${id}/cleaned`);
     refreshSchedules();
   };
 

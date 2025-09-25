@@ -7,7 +7,7 @@ export default function Dashboard() {
   const [schedules, setSchedules] = useState([]);
 
   const fetchSchedules = async () => {
-    const res = await axios.get("http://localhost:5000/schedule");
+    const res = await axios.get("https://d-m-server-production.up.railway.app/schedule");
     const sorted = [...res.data].sort(
       (a, b) => new Date(a.dateTime) - new Date(b.dateTime)
     );
